@@ -62,9 +62,7 @@
 
     public function getInfostitular(){
         echo $this->getFirstName()." ".$this->getLastName()." ".$this->getDate()." ".$this->getCity()." ".$this->getAge()."<br>";
-    }
-
-   
+    }   
 
 }
 
@@ -176,12 +174,7 @@ function displayAccounts($firstName, $lastName, $dateBirth, $accountList){
     }
 }
 
-echo displayAccounts("Loic", "Bergmann", "03/01/1991", $accounts); // A partir de l'array Accounts qui contient tous les comptes de la banque.
-
-
-
-
-    
+echo displayAccounts("Loic", "Bergmann", "03/01/1991", $accounts); // A partir de l'array Accounts qui contient tous les comptes de la banque.    
     
 ?>
 
