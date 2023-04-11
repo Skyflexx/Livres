@@ -97,7 +97,7 @@ class Account extends Titular{
     }  
 
     public function getInfosAccount(){ // Retourne toutes les infos du compte.
-        echo $this->getFirstName()." ".$this->getLastName()." ".$this->getDate()." ".$this->getCity()." ".$this->getTypeAccount()." ".$this->getSold()." ".$this->getDevise()." ".$this->getId()."<br>";
+        echo $this->getFirstName()." ".$this->getLastName()." ".$this->getDate()." ".$this->getCity()." ".$this->getTypeAccount()." ".$this->getSold()." ".$this->getDevise()."<br>";
     }
 
     public function credit($value){ // Methode permettant de créditer le compte
