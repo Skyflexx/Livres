@@ -39,19 +39,18 @@
 
         }
 
-        // public function showBibliography(){
+        public function showBibliography(){
 
-        //     echo "Livres de $this->firstname $this->lastname :<br>";
+            $bibliography = "Livres de $this->firstname $this->lastname :<br>";
 
-        //     foreach ($this->bookList as $book){ // On parcourt l'array contenant les différents livres
+            foreach ($this->bookList as $book){
 
-        //         // $bookInfos = $book->showInfoBook(); // On stocke l'objet livre dans une variable
-
-        //         // echo $bookInfos; // On echo la variable.
-
-        //         echo $book->showInfoBook();
-        //     }
-        // }
+                $bibliography = $bibliography.$book->getInfoBook();               
+                
+            }
+            
+            echo $bibliography;  
+        }
 
         public function __tostring(){
 

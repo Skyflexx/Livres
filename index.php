@@ -26,7 +26,9 @@
        echo $book1;    // Affichage des infos du livre en question
 
        $book1->setAuthor($loic);
+       echo "<br>" ;
       
+       $stephen->showBibliography();
 
     ?>
 
