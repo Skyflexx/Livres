@@ -82,9 +82,7 @@
 
         public function __tostring(){ // Retourne toutes les infos d'un livre dont l'auteur.
 
-            $authorName = $this->author;
-
-            return "$this->title"."(".$this->getYearRelease().") : ".$this->nbPages." pages / ".$this->price." € / ".$authorName->getFirstName()." ".$authorName->getLastName()."<br>";
+            return $this->getTitle();
             
         }        
 

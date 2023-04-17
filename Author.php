@@ -46,20 +46,12 @@
                 
             }
 
-            echo $bibliography;  
+            return $bibliography;  
         }
 
         public function __tostring(){
 
-            $bibliography = "Livres de $this->firstname $this->lastname :<br>";
-
-            foreach ($this->bookList as $book){
-
-                $bibliography = $bibliography.$book->getInfoBook();               
-                
-            }
-
-            return $bibliography;          
+            return $this->getfirstName()." ".$this->getLastname();       
             
         }    
 

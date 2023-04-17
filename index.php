@@ -26,9 +26,9 @@
 
        echo $stephen; // Tostring
 
-       echo "<br>";
+       echo "<br>";  echo "<br>";
 
-       $stephen->showBibliography();// Affichage de la bibliographie de Stephen King
+       echo $stephen->showBibliography();// Affichage de la bibliographie de Stephen King
 
     ?>
 
