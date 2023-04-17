@@ -6,15 +6,15 @@
 
         private string $title;
         private int $nbPages;
-        private int $yearParution;
+        private Datetime $datePublication;
         private float $price;
         private Author $author;
 
-        public function __construct (string $title, int $nbPages, int $yearParution, float $price, Author $author){
+        public function __construct (string $title, int $nbPages, string $datePublication, float $price, Author $author){
 
             $this->title = $title;
             $this->nbPages = $nbPages;
-            $this->yearParution = $yearParution;
+            $this->datePublication = new DateTime($datePublication);
             $this->price = $price;
             $this->author = $author;
 
@@ -22,12 +22,70 @@
 
         }
 
-        public function showInfoBook(){
-            echo "$this->title ($this->yearParution) : $this->nbPages pages / $this->price €<br>";
+        // GETTERS 
+
+        public function getTitle(){
+            return $this->title;
         }
 
-        public function __tostring(){
-            echo $this->showInfoBook;
+        public function getNbPages(){
+            return $this->nbPages;
+        }
+
+        public function getDatePublication(){
+            return $this->datePublication;
+        }
+
+        public function getPrice(){
+            return $this->price;
+        }
+
+        public function getAuthor(){
+            return $this->author;
+        }
+
+        // SETTERS
+
+        public function setTitle(string $title){
+            $this->title = $title;
+        }
+
+        public function setNbPages(int $nbPages){
+            $this->nbPages = $pages;
+        }
+
+        public function setDateParution(string $datePublication){
+            $this->datePublication = $datePublication;
+        }
+
+        public function setPrice($price){
+            $this->price = $price;
+        }
+
+        public function setAuthor(Author $author){
+            $this->author = $author;
+        }
+
+
+        // METHODES GENERALES
+
+        public function getYearRelease(){             
+            $yearRelease = $this->datePublication; 
+            return $yearRelease->format("Y");  // Methode "format" de la classe DateTime permettant d'afficher l'année juste avec le Y Majuscule.
+        }
+
+        public function getInfoBook(){ // Ne retourne pas le nom de l'auteur car méthode utilisée dans la classe Author pour afficher sa bibliographie.
+
+            $infoBook = "$this->title"."(".$this->getYearRelease().") : ".$this->nbPages." pages / ".$this->price." € <br>";
+            return $infoBook;
+        }
+
+        public function __tostring(){ // Retourne toutes les infos d'un livre dont l'auteur.
+
+            $authorName = $this->author;
+
+            return "$this->title"."(".$this->getYearRelease().") : ".$this->nbPages." pages / ".$this->price." € / ".$authorName->getFirstName()." ".$authorName->getLastName()."<br>";
+            
         }        
 
     }
