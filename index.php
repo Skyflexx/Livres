@@ -12,8 +12,7 @@
         include "Book.php";
         include "Author.php";
 
-        $stephen = new Author("Stephen", "King");
-        $loic = new Author("loic", "bergmann");
+        $stephen = new Author("Stephen", "King");        
         $book1 = new Book("Ca", 1138, "01/01/1986", 20, $stephen);       
         $book2 = new Book("simetierre", 420, "01/01/1878", 14, $stephen);
         $book3 = new Book("Le Fléau", 823, "01/01/1978", 14, $stephen);
@@ -21,14 +20,18 @@
 
          
         
-       echo $stephen; // Affichage de la bibliographie de Stephen King
+       
        echo "<br>" ;  
-       echo $book1;    // Affichage des infos du livre en question
 
-       $book1->setAuthor($loic);
-       echo "<br>" ;
-      
-       $stephen->showBibliography();
+       echo $book1; // Affichage des infos du livre en question
+       
+       echo "<br>";   
+
+       echo $stephen; // Tostring
+
+       echo "<br>";
+
+       $stephen->showBibliography();// Affichage de la bibliographie de Stephen King
 
     ?>
 
