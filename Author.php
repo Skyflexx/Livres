@@ -9,11 +9,9 @@
         private array $bookList;
 
         public function __construct($firstname, $lastname){
-
             $this->firstname = $firstname;
             $this->lastname = $lastname;
             $this->bookList = array();
-
         }
 
         public function getFirstname(){
@@ -29,8 +27,7 @@
         }
 
         public function setLastname($newLastname){
-            $this->lastname = $newLastname;
-            
+            $this->lastname = $newLastname;            
         }
 
         public function addBook(Book $book){ // fonction automatiquement appelée lors de la création d'un new Book puisque lié à un auteur.
@@ -48,7 +45,7 @@
                 $bibliography = $bibliography.$book->getInfoBook();               
                 
             }
-            
+
             echo $bibliography;  
         }
 
